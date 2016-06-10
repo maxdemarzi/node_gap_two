@@ -9,7 +9,7 @@ Instructions
 
         mvn clean package
 
-2. Copy target/node_gap-1.0-SNAPSHOT.jar to the plugins/ directory of your Neo4j server.
+2. Copy target/node_gap_two-1.0-SNAPSHOT.jar to the plugins/ directory of your Neo4j server.
 
 3a. Configure Neo4j by adding a line to conf/neo4j-server.properties on versions < 3.0:
 
