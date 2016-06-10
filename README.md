@@ -34,8 +34,53 @@ Instructions
 
         :GET /v1/service/warmup
 
-8. Run it:
+8. Run the cypher in the cypher.txt file in this repository.
+
+9. Run the command:
 
         :GET /v1/service/gaps
 
 Results should look like this:
+
+[
+  [
+    {
+      "id": "p3"
+    },
+    {
+      "id": "p4"
+    },
+    {
+      "id": "p5"
+    },
+    {
+      "id": "p6"
+    }
+  ]
+]
+
+Connect p8 to p6:
+
+        MATCH (p8:Point {id: 'p8'}),  (p6:Point {id: 'p6'})
+        CREATE (p8)-[:CONNECTED]->(p6)
+
+Run it again:
+
+        :GET /v1/service/gaps
+
+Now Results are:
+
+[
+  [
+    {
+      "id": "p3"
+    },
+    {
+      "id": "p8"
+    },
+    {
+      "id": "p6"
+    }
+  ]
+]
+
