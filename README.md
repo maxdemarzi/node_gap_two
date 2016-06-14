@@ -84,3 +84,11 @@ Now Results are:
   ]
 ]
 
+Importing Data
+--------------
+
+bin/neo4j-import --into graph.db --nodes:Point points2.csv --relationships:CONNECTED lines2.csv
+
+MATCH (p1:Point {id: "36.13422 -93.562391"}), (p2:Point {id: "36.134687 -93.567391"}),
+sp = shortestPath((p1)-[CONNECTED*]-(p2))
+RETURN sp
